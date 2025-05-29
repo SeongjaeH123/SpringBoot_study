@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Count = () => {
     let count = 0;
@@ -11,7 +11,8 @@ const Count = () => {
     const [count2, setCount2] = useState(0)
 
     const handleClick2 = () => {
-        setCount2("state : ",count2+1)
+        setCount2(count2+1)
+        console.log("state : ",count2)
     }
     //기본적으로 state는 다 렌더링되고 갱신된다.
 
