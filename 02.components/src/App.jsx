@@ -1,7 +1,7 @@
 import './App.css'
-import Menubox from './components/Menubox'
-import MemberInfo from './components/MemberInfo'
-import Count from './components/Count'
+import LikeCount from './components/LikeCount'
+
+
 
 function App() {
 
@@ -43,7 +43,7 @@ function App() {
       */}
 
       {/* state실습 */}
-      <Count/>
+      {/* <Count/> */}
 
     </div>
   )
