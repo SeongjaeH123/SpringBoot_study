@@ -7,33 +7,16 @@ import { useState } from 'react'
 const MenuBoard = () => {
 
     const [data, setData] = useState(menuData)
-    const dataList = menuData
 
     const menuFilter = (item) => {
-        switch(item) {
-            case "All" :
-                setData(menuData)
-                break;
-            case "커피" :
-                setData(dataList.filter((d)=>
-                d.category==="커피"
-                ))
-                break;
-            case "디저트" :
-                setData(dataList.filter((d)=>
-                d.category==="디저트"
-                ))
-                break;
-            case "에이드" :
-                setData(dataList.filter((d)=>
-                d.category==="에이드"
-                ))
-                break;
-            case "베이커리" :
-                setData(dataList.filter((d)=>
-                d.category==="베이커리"
-                ))
-                break;
+        let filterData = menuData.filter((d)=>
+            d.category===item
+        )
+        if(item==="All") {
+            //All 이라는 카테고리는 존재하지 않으므로 따로 처리해야 함
+            setData(menuData)
+        } else {
+            setData(filterData)
         }
         
     }
