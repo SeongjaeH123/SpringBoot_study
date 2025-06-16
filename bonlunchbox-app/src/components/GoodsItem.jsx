@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const GoodsItem = ({item}) => {
   return (
@@ -16,7 +17,9 @@ const GoodsItem = ({item}) => {
           이미지 클릭 시, Link컴포넌트를 이용해 상세페이지로 이동하시오
           상세페이지 URL : /menu/상품의 id
         */}
-        <img src={item.main_thumb} alt="이미지" />
+        <Link to={`/goods/${item.id}`}>
+          <img src={item.main_thumb} alt="이미지" />
+        </Link>
       </div>
       <div className="goods-name">
         <h4>{item.name}</h4>
