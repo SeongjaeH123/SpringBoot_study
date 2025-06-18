@@ -18,7 +18,7 @@ const GoodsDetail = () => {
   //요청URL : http://localhost:3004/goods_list/상품id
   const getGood = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/goods_list/${id}`);
+      const res = await axios.get(`http://localhost:8088/lunch/api/goods_list/${id}`);
       const data = res.data
       setGood(data)
       console.log(data)
@@ -47,13 +47,13 @@ const GoodsDetail = () => {
             <div className="goods-detail-title">
               <div className="goods-icon">
               {/* 해당 상품이 new인지 best인지 조건부 렌더링을 통해 출력하시오. */}
-              {good.new && <em className="goods-new">new</em>}
-              {good.best && <em className="goods-best">best</em>}
+              {good.is_new && <em className="goods-new">new</em>}
+              {good.is_best && <em className="goods-best">best</em>}
               </div>
               <p className="goods-detail-name">{good.name}</p>
               <p className="goods-detail-txt">{good.detail.txt}</p>
               <div className="goods-detail-price-box">
-                <strong strong>{good.price}</strong>
+                <strong>{good.price}</strong>
                 <span>원</span>
               </div>
             </div>

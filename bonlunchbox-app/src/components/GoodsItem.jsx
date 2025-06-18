@@ -6,11 +6,8 @@ const GoodsItem = ({item}) => {
     <div className="goods-item" style={{ position: "relative" }}>
       <div className="goods-item-icon">
         {/* 해당 상품이 new인지 best인지 조건부 렌더링을 통해 출력하시오. */}
-        { item.new?
-          <em className="goods-new">new</em>
-          : item.best?
-            <em className="goods-best">best</em> : ""
-        }
+        {item.is_new && <em className="goods-new">new</em>}
+        {item.is_best && <em className="goods-best">best</em>}
       </div>
       <div className="goods-thumb">
         {/* 
